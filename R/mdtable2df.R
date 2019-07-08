@@ -17,7 +17,8 @@ mdtable2df <-
       stringr::str_trim("both")
 
     df <-
-      as.data.frame(mat) %>%
+      as.data.frame(mat, row.names = NULL, make.names = F) %>%
+      tibble::as_tibble() %>%
       .[-1,] %>%
       purrr::modify(stringr::str_trim, "both")
     colnames(df) <- nm
