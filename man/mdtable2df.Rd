@@ -12,3 +12,25 @@ mdtable2df(string)
 \description{
 Convert markdown table to data.frame
 }
+\examples{
+md_table <- c(
+"|hoge|hage|",
+"|:-:|--:|",
+"|1.0|a|",
+"|2|abc|"
+)
+mdtable2df(md_table)
+
+\dontrun{
+|hoge|hage|hige|
+|:-:|--:|:-:|
+|1.0|a  |1L|
+|2| abc |foo|
+
+clipr::read_clip() \%>\%
+  mdtable2df() \%>\%
+  knitr::kable(align = "lrc") \%>\%
+  clipr::write_clip()
+}
+
+}
