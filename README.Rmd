@@ -39,6 +39,6 @@ library(prtclmisc)
 20.0 uL, 20 mL
 10%
 10℃
-" %>% replace_all_uL() %>% cat()
+" %>% replace_all_siunit() %>% cat()
 
 ```
