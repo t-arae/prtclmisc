@@ -13,6 +13,6 @@ replace_all_mL(string)
 Replace all "mL" to tex siunitx command
 }
 \examples{
-replace_all_uL("20.0 mL")
+replace_all_mL("20.0 mL")
 
 }

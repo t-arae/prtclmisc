@@ -35,7 +35,7 @@ replace_all_uL <-
 #' @param string text
 #' @export
 #' @examples
-#' replace_all_uL("20.0 mL")
+#' replace_all_mL("20.0 mL")
 #'
 replace_all_mL <-
   function(string){
@@ -43,7 +43,7 @@ replace_all_mL <-
       string = string,
       pattern = "\\d+ mL",
       replacement = function(x)
-        stringi::stri_replace_all_fixed(x, "uL", "\\si{\\mL}")
+        stringi::stri_replace_all_fixed(x, "mL", "\\si{\\mL}")
     )
   }
 
