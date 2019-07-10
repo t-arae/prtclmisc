@@ -11,6 +11,8 @@ replace_all_siunit <-
       replace_all_uL() %>%
       replace_all_mL() %>%
       replace_all_g() %>%
+      replace_all_ug() %>%
+      replace_all_ugmL() %>%
       replace_all_celcius() %>%
       replace_all_percent()
   }
@@ -60,6 +62,38 @@ replace_all_g <-
       pattern = "\\d+ g([^/]|$)",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "g", "\\si{\\g}")
+    )
+  }
+
+#' Replace all "ug" to tex siunitx command
+#' @param string text
+#' @export
+#' @examples
+#' replace_all_ug("20.0 ug")
+#'
+replace_all_ug <-
+  function(string){
+    stringr::str_replace_all(
+      string = string,
+      pattern = "\\d+ ug([^/]|$)",
+      replacement = function(x)
+        stringi::stri_replace_all_fixed(x, "ug", "\\si{\\ug}")
+    )
+  }
+
+#' Replace all "ug/mL" to tex siunitx command
+#' @param string text
+#' @export
+#' @examples
+#' replace_all_ugmL("20.0 ug/mL")
+#'
+replace_all_ugmL <-
+  function(string){
+    stringr::str_replace_all(
+      string = string,
+      pattern = "\\d+ ug/mL",
+      replacement = function(x)
+        stringi::stri_replace_all_fixed(x, "ug/mL", "\\si{\\ug}/\\si{\\mL}")
     )
   }
 
