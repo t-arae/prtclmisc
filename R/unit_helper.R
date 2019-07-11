@@ -27,7 +27,7 @@ replace_all_uL <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "\\d+ uL",
+      pattern = "[\\d`] uL",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "uL", "\\si{\\uL}")
     )
@@ -43,7 +43,7 @@ replace_all_mL <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "\\d+ mL",
+      pattern = "[\\d`] mL",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "mL", "\\si{\\mL}")
     )
@@ -59,7 +59,7 @@ replace_all_g <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "\\d+ g([^/]|$)",
+      pattern = "[\\d`] g([^/]|$)",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "g", "\\si{\\g}")
     )
@@ -75,7 +75,7 @@ replace_all_ug <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "\\d+ ug([^/]|$)",
+      pattern = "[\\d`] ug([^/]|$)",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "ug", "\\si{\\ug}")
     )
@@ -91,7 +91,7 @@ replace_all_ugmL <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "\\d+ ug/mL",
+      pattern = "[\\d`] ug/mL",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "ug/mL", "\\si{\\ug}/\\si{\\mL}")
     )
