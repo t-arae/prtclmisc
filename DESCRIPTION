@@ -14,5 +14,6 @@ Imports:
     stringi,
     magrittr,
     purrr,
-    tibble
+    tibble,
+    units
 RoxygenNote: 6.1.1

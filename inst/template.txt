@@ -1,0 +1,6 @@
+
+#' unit_is_here
+#' @param x numeric
+#' @export
+unit_is_here <- function(x) units::set_units(x, "unit_is_here")
+
