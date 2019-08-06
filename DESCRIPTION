@@ -15,5 +15,6 @@ Imports:
     magrittr,
     purrr,
     tibble,
-    units
+    units,
+    knitr
 RoxygenNote: 6.1.1

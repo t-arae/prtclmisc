@@ -9,7 +9,7 @@
 #' "|1.0|a|",
 #' "|2|abc|"
 #' )
-#' mdtable2df(md_table)
+#' mdtbl2df(md_table)
 #'
 #' \dontrun{
 #' |hoge|hage|hige|
@@ -18,12 +18,12 @@
 #' |2| abc |foo|
 #'
 #' clipr::read_clip() %>%
-#'   mdtable2df() %>%
+#'   mdtbl2df() %>%
 #'   knitr::kable(align = "lrc") %>%
 #'   clipr::write_clip()
 #' }
 #'
-mdtable2df <-
+mdtbl2df <-
   function(string){
     . <-  NULL
     mat <-
@@ -42,5 +42,24 @@ mdtable2df <-
       .[-1,] %>%
       purrr::modify(stringr::str_trim, "both")
     colnames(df) <- nm
-    return(df)
+   return(df)
+  }
+
+
+#' Convert markdown table to markdown table
+#' @param string text
+#' @param ... ...
+#' @export
+#' @examples
+#' md_table <- c(
+#' "|hoge|hage|",
+#' "|:-:|--:|",
+#' "|1.0|a|",
+#' "|2|abc|"
+#' )
+#' mdtbl2mdtbl(md_table, align = "lr)
+mdtbl2mdtbl <-
+  function(string, ...){
+    mdtbl2df(string) %>%
+      knitr::kable(...)
   }
