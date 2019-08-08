@@ -57,9 +57,10 @@ mdtbl2df <-
 #' "|1.0|a|",
 #' "|2|abc|"
 #' )
-#' mdtbl2mdtbl(md_table, align = "lr)
+#' mdtbl2mdtbl(md_table, align = "lrc")
 mdtbl2mdtbl <-
   function(string, ...){
     mdtbl2df(string) %>%
       knitr::kable(...)
   }
+

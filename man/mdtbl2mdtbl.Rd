@@ -14,3 +14,12 @@ mdtbl2mdtbl(string, ...)
 \description{
 Convert markdown table to markdown table
 }
+\examples{
+md_table <- c(
+"|hoge|hage|",
+"|:-:|--:|",
+"|1.0|a|",
+"|2|abc|"
+)
+mdtbl2mdtbl(md_table, align = "lrc")
+}
