@@ -28,3 +28,9 @@ ug <- function(x) units::set_units(x, "ug")
 #' @export
 ng <- function(x) units::set_units(x, "ng")
 
+
+#' pg
+#' @param x numeric
+#' @export
+pg <- function(x) units::set_units(x, "pg")
+

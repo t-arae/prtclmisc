@@ -34,3 +34,27 @@ mgmL <- function(x) units::set_units(x, "mg/mL")
 #' @export
 ugmL <- function(x) units::set_units(x, "ug/mL")
 
+
+#' ngmL
+#' @param x numeric
+#' @export
+ngmL <- function(x) units::set_units(x, "ng/mL")
+
+
+#' uguL
+#' @param x numeric
+#' @export
+uguL <- function(x) units::set_units(x, "ug/uL")
+
+
+#' nguL
+#' @param x numeric
+#' @export
+nguL <- function(x) units::set_units(x, "ng/uL")
+
+
+#' pguL
+#' @param x numeric
+#' @export
+pguL <- function(x) units::set_units(x, "pg/uL")
+

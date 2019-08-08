@@ -22,3 +22,9 @@ uM <- function(x) units::set_units(x, "umol/L")
 #' @export
 nM <- function(x) units::set_units(x, "nmol/L")
 
+
+#' pM
+#' @param x numeric
+#' @export
+pM <- function(x) units::set_units(x, "pmol/L")
+
