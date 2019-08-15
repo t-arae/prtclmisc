@@ -8,77 +8,23 @@
 replace_all_siunit <-
   function(string){
     string %>%
-      replace_all_uL() %>%
+      # L functions
+      replace_all_L() %>%
       replace_all_mL() %>%
+      replace_all_uL() %>%
+      replace_all_nL() %>%
+      replace_all_pL() %>%
+      # gram functions
+      replace_all_kg() %>%
       replace_all_g() %>%
+      replace_all_mg() %>%
       replace_all_ug() %>%
+      replace_all_ng() %>%
+      replace_all_pg() %>%
+      #
       replace_all_ugmL() %>%
       replace_all_celcius() %>%
       replace_all_percent()
-  }
-
-#' Replace all "uL" to tex siunitx command
-#' @param string text
-#' @export
-#' @examples
-#' replace_all_uL("20.0 uL")
-#'
-replace_all_uL <-
-  function(string){
-    stringr::str_replace_all(
-      string = string,
-      pattern = "[\\d`] uL",
-      replacement = function(x)
-        stringi::stri_replace_all_fixed(x, "uL", "\\si{\\uL}")
-    )
-  }
-
-#' Replace all "mL" to tex siunitx command
-#' @param string text
-#' @export
-#' @examples
-#' replace_all_mL("20.0 mL")
-#'
-replace_all_mL <-
-  function(string){
-    stringr::str_replace_all(
-      string = string,
-      pattern = "[\\d`] mL",
-      replacement = function(x)
-        stringi::stri_replace_all_fixed(x, "mL", "\\si{\\mL}")
-    )
-  }
-
-#' Replace all "g" to tex siunitx command
-#' @param string text
-#' @export
-#' @examples
-#' replace_all_g("20.0 g")
-#'
-replace_all_g <-
-  function(string){
-    stringr::str_replace_all(
-      string = string,
-      pattern = "[\\d`] g([^/]|$)",
-      replacement = function(x)
-        stringi::stri_replace_all_fixed(x, "g", "\\si{\\g}")
-    )
-  }
-
-#' Replace all "ug" to tex siunitx command
-#' @param string text
-#' @export
-#' @examples
-#' replace_all_ug("20.0 ug")
-#'
-replace_all_ug <-
-  function(string){
-    stringr::str_replace_all(
-      string = string,
-      pattern = "[\\d`] ug([^/]|$)",
-      replacement = function(x)
-        stringi::stri_replace_all_fixed(x, "ug", "\\si{\\ug}")
-    )
   }
 
 #' Replace all "ug/mL" to tex siunitx command

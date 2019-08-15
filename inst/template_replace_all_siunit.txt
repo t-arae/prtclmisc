@@ -1,0 +1,17 @@
+
+#' Replace all "UNIT_IS_HERE" to tex siunitx command
+#' @param string text
+#' @export
+#' @examples
+#' replace_all_UNIT_IS_HERE("20.0 UNIT_IS_HERE")
+#'
+replace_all_UNIT_IS_HERE <-
+  function(string){
+    stringr::str_replace_all(
+      string = string,
+      pattern = "PATTERN_IS_HERE",
+      replacement = function(x)
+        stringi::stri_replace_all_fixed(x, "UNIT_IS_HERE", "SICMD_IS_HERE")
+    )
+  }
+
