@@ -1,4 +1,7 @@
 
+### unitsパッケージのヘルパー関数を定義するRファイルを作成。
+### 濃度計算を楽に行うため。
+
 # install.packages("units")
 
 library(units)
@@ -57,46 +60,4 @@ percent_functions <-
   map2(percent_family2, ~ str_replace(.x, "unit_is__here", .y)) %>%
   unlist()
 write_lines(percent_functions, path = "R/percent.R")
-
-# kg <- function(x) units::set_units(x, "kg")
-# g <- function(x) units::set_units(x, "g")
-# mg <- function(x) units::set_units(x, "mg")
-# ug <- function(x) units::set_units(x, "ug")
-# ng <- function(x) units::set_units(x, "ng")
-
-# mol <- function(x) units::set_units(x, "mol")
-# mmol <- function(x) units::set_units(x, "mmol")
-# umol <- function(x) units::set_units(x, "umol")
-# nmol <- function(x) units::set_units(x, "nmol")
-
-# mw <- function(x) units::set_units(x, "g/mol")
-
-# L <- function(x) units::set_units(x, "L")
-# mL <- function(x) units::set_units(x, "mL")
-# uL <- function(x) units::set_units(x, "uL")
-# nL <- function(x) units::set_units(x, "nL")
-
-# gL <- function(x) units::set_units(x, "g/L")
-# mgL <- function(x) units::set_units(x, "mg/L")
-# ugL <- function(x) units::set_units(x, "ug/L")
-# gmL <- function(x) units::set_units(x, "g/mL")
-# mgmL <- function(x) units::set_units(x, "mg/mL")
-# ugmL <- function(x) units::set_units(x, "ug/mL")
-
-# M <- function(x) units::set_units(x, "mol/L")
-# mM <- function(x) units::set_units(x, "mmol/L")
-# uM <- function(x) units::set_units(x, "umol/L")
-# nM <- function(x) units::set_units(x, "nmol/L")
-
-# ww_percent <- function(x) units::set_units(x, "g/100g")
-# wv_percent <- function(x) units::set_units(x, "g/100mL")
-# vv_percent <- function(x) units::set_units(x, "mL/100mL")
-
-
-# Na <- 123 %>% mw
-# Na %>% units::deparse_unit()
-# (mM(200) * mL(0.2) * Na) %>% convert_to("mg")
-# (mM(200) * mL(0.2) * Na) %>% units::set_units("mg")
-# (mM(200) * mL(0.2) * Na) %>% cat_units()
-# (mM(200) * mL(0.2) * Na) %>% convert_to("mg") %>% cat_units()
 
