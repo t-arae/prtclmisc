@@ -21,6 +21,12 @@ replace_all_siunit <-
       replace_all_ug() %>%
       replace_all_ng() %>%
       replace_all_pg() %>%
+      # molar functions
+      replace_all_M() %>%
+      replace_all_mM() %>%
+      replace_all_uM() %>%
+      replace_all_nM() %>%
+      replace_all_pM() %>%
       #
       replace_all_ugmL() %>%
       replace_all_celcius() %>%

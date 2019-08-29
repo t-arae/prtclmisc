@@ -35,3 +35,22 @@ L_functions <-
 
 #cat(L_functions, sep = "\n")
 write_lines(L_functions, path = "R/siunitx_L.R")
+
+
+### M functions
+
+M_unit <- c("M", "mM", "uM", "nM", "pM")
+si_prefix <- c("", "\\\\milli", "\\\\micro", "\\\\nano", "\\\\pico")
+# L_pattern <- paste0("[\\\\d`] ", L_unit, "([^/]|$)")
+M_pattern <- paste0("[\\\\d`] ", M_unit)
+M_sicmd <- paste0("\\\\si{", si_prefix, "\\\\Molar}")
+
+template <- read_lines("inst/template_replace_all_siunit.txt")
+M_functions <-
+  map(M_unit, ~ str_replace_all(template, "UNIT_IS_HERE", .x)) %>%
+  map2(M_pattern, ~ stringi::stri_replace_all_fixed(.x, "PATTERN_IS_HERE", .y)) %>%
+  map2(M_sicmd, ~ stringi::stri_replace_all_fixed(.x, "SICMD_IS_HERE", .y)) %>%
+  unlist
+
+#cat(M_functions, sep = "\n")
+write_lines(M_functions, path = "R/siunitx_M.R")
