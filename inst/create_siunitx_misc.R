@@ -41,8 +41,7 @@ write_lines(L_functions, path = "R/siunitx_L.R")
 
 M_unit <- c("M", "mM", "uM", "nM", "pM")
 si_prefix <- c("", "\\\\milli", "\\\\micro", "\\\\nano", "\\\\pico")
-# L_pattern <- paste0("[\\\\d`] ", L_unit, "([^/]|$)")
-M_pattern <- paste0("[\\\\d`] ", M_unit)
+M_pattern <- paste0("[\\\\d`] ", M_unit, "($|[ ])")
 M_sicmd <- paste0("\\\\si{", si_prefix, "\\\\Molar}")
 
 template <- read_lines("inst/template_replace_all_siunit.txt")

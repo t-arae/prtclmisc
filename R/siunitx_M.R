@@ -9,7 +9,7 @@ replace_all_M <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "[\\d`] M",
+      pattern = "[\\d`] M($|[ ])",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "M", "\\si{\\Molar}")
     )
@@ -26,7 +26,7 @@ replace_all_mM <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "[\\d`] mM",
+      pattern = "[\\d`] mM($|[ ])",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "mM", "\\si{\\milli\\Molar}")
     )
@@ -43,7 +43,7 @@ replace_all_uM <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "[\\d`] uM",
+      pattern = "[\\d`] uM($|[ ])",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "uM", "\\si{\\micro\\Molar}")
     )
@@ -60,7 +60,7 @@ replace_all_nM <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "[\\d`] nM",
+      pattern = "[\\d`] nM($|[ ])",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "nM", "\\si{\\nano\\Molar}")
     )
@@ -77,7 +77,7 @@ replace_all_pM <-
   function(string){
     stringr::str_replace_all(
       string = string,
-      pattern = "[\\d`] pM",
+      pattern = "[\\d`] pM($|[ ])",
       replacement = function(x)
         stringi::stri_replace_all_fixed(x, "pM", "\\si{\\pico\\Molar}")
     )
