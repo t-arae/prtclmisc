@@ -32,7 +32,7 @@ units_conv <-
 #' @param x x
 #' @param digits integer
 #' @export
-p <- function(x, digits) {
+p <- function(x, digits = 6) {
   if(class(x) == "units") {
     u <- units::deparse_unit(x)
     if(u %in% names(units_conv)) {
@@ -40,7 +40,7 @@ p <- function(x, digits) {
     } else {
       u <- paste0(" ", u)
     }
-    return(paste0(round(x, digits), u))
+    return(paste0(signif(x, digits), u))
   } else {
     return(x)
   }

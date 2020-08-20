@@ -4,7 +4,7 @@
 \alias{p}
 \title{print value with units}
 \usage{
-p(x, digits)
+p(x, digits = 6)
 }
 \arguments{
 \item{x}{x}
