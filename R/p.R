@@ -2,9 +2,9 @@
 units_conv <-
   tibble::tribble(
     ~deparsed, ~print_units,
-    "g 100mL-1", "w/v%",
-    "g 100g-1", "w/w%",
-    "mL 100mL-1", "v/v%",
+    "g dL-1", "w/v%",
+    "g hg-1", "w/w%",
+    "mL dL-1", "v/v%",
 
     "g L-1", " g/L",
     "g mL-1", " g/mL",
